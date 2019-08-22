@@ -1,20 +1,20 @@
  def nyc_pigeon_organizer(data)
    
- pigeon_list = {}
+ pigeons = {}
   data.each do |attribute, value|
     value.each do |description, array|
       array.each do |name|
-        if pigeon_list[name] == nil
-          pigeon_list[name] = {}
+        if pigeons[name] == nil
+          pigeons[name] = {}
 end
-if pigeon_list[name][attribute] == nil
-  pigeon_list[name][attribute] = []
+if pigeons[name][attribute] == nil
+  pigeons[name][attribute] = []
 end
 if data[attribute][description].include?(name) 
-  pigeon_list[name][attribute] << description.to_s
+  pigeons[name][attribute] << description.to_s
 end
 end
 end
 end
-pigeon_list
+pigeons
 end
